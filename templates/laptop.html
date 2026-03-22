@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+<h2>💻 Laptop AR Viewer</h2>
+
+<p>Point camera at Hiro Marker</p>
+
+<a href="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png" target="_blank">
+    Download Marker
+</a>
+
+<a-scene embedded arjs="sourceType: webcam;">
+    <a-assets>
+        {% if model %}
+        <a-asset-item id="model" src="{{ model.file.url }}"></a-asset-item>
+        {% endif %}
+    </a-assets>
+
+    <a-marker preset="hiro">
+        <a-entity 
+            gltf-model="#model"
+            scale="0.3 0.3 0.3"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
+        </a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+</a-scene>
+
+{% endblock %}

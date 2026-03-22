@@ -1,0 +1,25 @@
+glb_ar_project/
+│
+├── manage.py
+├── db.sqlite3
+│
+├── glb_ar_project/
+│   ├── settings.py
+│   ├── urls.py
+│
+├── viewer/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── forms.py
+│
+├── templates/
+│   ├── landing.html
+│   ├── upload.html
+│   ├── mobile.html
+│   ├── laptop.html
+│
+├── media/
+│   └── models/
+│
+├── static/
